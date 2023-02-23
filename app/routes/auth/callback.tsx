@@ -1,4 +1,4 @@
-import { LoaderFunction } from "remix";
+import { LoaderFunction } from "@remix-run/node";
 import { handleCallback } from "~/utils/session.server";
 
 export const loader: LoaderFunction = async ({ request }) => {

@@ -1,5 +1,6 @@
-import { Card, List, Page } from "@shopify/polaris";
-import { LoaderFunction, useLoaderData } from "remix";
+import { LegacyCard, List, Page } from "@shopify/polaris";
+import { LoaderFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import { getShop, requireAccessToken } from "~/utils/session.server";
 
 const query = `
@@ -50,7 +51,7 @@ export default function Products() {
   const products = useLoaderData();
   return (
     <Page title="Products">
-      <Card title="Product list" sectioned>
+      <LegacyCard title="Product list" sectioned>
         <List type="bullet">
           {products.map((edge: any) => {
             const { node: product } = edge;
@@ -62,7 +63,7 @@ export default function Products() {
             );
           })}
         </List>
-      </Card>
+      </LegacyCard>
     </Page>
   );
 }

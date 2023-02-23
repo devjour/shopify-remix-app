@@ -7,19 +7,9 @@ import {
   Button,
   TextField,
 } from "@shopify/polaris";
-import shopifyStyles from "@shopify/polaris/build/esm/styles.css";
 import enTranslations from "@shopify/polaris/locales/en.json";
+import { LoaderFunction } from "@remix-run/node";
 
-import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
-
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: "stylesheet",
-      href: shopifyStyles,
-    },
-  ];
-};
 
 export const loader: LoaderFunction = async ({ request }) => {
   return {};
